@@ -1,6 +1,10 @@
-import React from 'react'
+import {useEffect} from 'react'
 
-const ControlPresupuesto = ({ presupuesto }) => {
+const ControlPresupuesto = ({ gastos, presupuesto }) => {
+
+    useEffect(() => {
+        console.log('componente listo')
+    }, [gastos])
 
     const formatearCantidad = (cantidad) => {
         return cantidad.toLocaleString('en-US', {
@@ -12,8 +16,8 @@ const ControlPresupuesto = ({ presupuesto }) => {
         <div className="contenedor-presupuesto contenedor sombra dos-columnas">
             <div>
                 <p>Grafica</p>
-
-                <div className="contenido-presupuesto">
+            </div>
+            <div className="contenido-presupuesto">
                     <p>
                         <span>Presupuesto: </span>{formatearCantidad(presupuesto)}
                     </p>
@@ -26,7 +30,6 @@ const ControlPresupuesto = ({ presupuesto }) => {
                         <span>Gastado: </span>{formatearCantidad(0)}
                     </p>
                 </div>
-            </div>
         </div>
     )
 }
