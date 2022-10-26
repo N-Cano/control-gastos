@@ -15,6 +15,8 @@ function App() {
   const [modal, setModal] = useState(false)
   const [animarModal, setAnimarModal] = useState(false)
 
+  const [gastoEditar, setGastoEditar] = useState({})
+
   const handleNuevoGasto = () => {
     setModal(true)
 
@@ -47,8 +49,9 @@ function App() {
       {isValidPresupuesto && (
         <>
           <main>
-            <ListadoGasto
+            <Lis tadoGasto
               gastos={gastos}
+              setGastoEditar={setGastoEditar}
             />
           </main>
           <div className="nuevo-gasto">
